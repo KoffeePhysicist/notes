@@ -41,6 +41,12 @@ In there, there's a training folder and a testing folder. As I read this in, I'm
 ```python
 il = ImageItemList.from_folder(path, convert_mode='L')
 ```
+GiFT 20200304: 
+Due the recent update of fastai, the line above will give the error of "not defined". The new function would be "ImageList" instead. Therefore, that line need to be replaced with
+```python
+il = ImageList.from_folder(path, convert_mode='L')
+```
+
 
 First thing you say is what kind of item list do you have. So in this case it's an item list of images. Then where are you getting the list of file names from. In this case, by looking in a folder recursively. That's where it's coming from. 
 
