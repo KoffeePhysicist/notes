@@ -42,6 +42,13 @@ In there, there's a training folder and a testing folder. As I read this in, I'm
 il = ImageItemList.from_folder(path, convert_mode='L')
 ```
 
+GiFT 20200304 :
+Due to the recent of fastai, the line above will give the error of "not defined". The function was replaced by "ImageList". Therefore, that line need to be
+
+```python
+il = ImageList.from_folder(path, convert_mode='L')
+```
+
 First thing you say is what kind of item list do you have. So in this case it's an item list of images. Then where are you getting the list of file names from. In this case, by looking in a folder recursively. That's where it's coming from. 
 
 You can pass in arguments that end up going to Pillow because Pillow (a.k.a. PIL) is the thing that actually opens that for us, and in this case these are black and white rather than RGB, so you have to use Pillow's `convert_mode='L'`. For more details refer to the python imaging library documentation to see what their convert modes are. But this one is going to be a grayscale which is what MNIST is.
